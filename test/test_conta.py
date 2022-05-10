@@ -23,8 +23,10 @@ def test_saque():
     conta = criar_conta()
     conta.sacar(200)
     assert conta.saldo == 800.0 # Sucesso
+    conta.sacar(1000)
+    assert conta.saldo == -200 # Sucesso (usando o limite)
     with pytest.raises(Exception): # Falha
-        conta.sacar(1000)
+        conta.sacar(8000)
     
 def test_atributos_privados():
     conta = criar_conta()    
@@ -42,9 +44,12 @@ def test_transferencia():
 
     # Falha
     with pytest.raises(Exception):
-        conta_origem.transferir(1000, conta_destino)
+        conta_origem.transferir(8000, conta_destino)
 
 def test_property_limite():
     conta = criar_conta()
     conta.limite = 10000 
     assert conta.limite == 10000 
+
+def test_codigo_banco():
+    assert Conta.codigo_banco() == '001'

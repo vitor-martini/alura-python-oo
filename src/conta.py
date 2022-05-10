@@ -17,16 +17,22 @@ class Conta():
     def limite(self, valor):
         self.__limite = valor
 
+    @staticmethod
+    def codigo_banco():
+        return '001'
+
     def depositar(self, valor):
         self.__saldo += valor
 
-    def eh_saldo_negativo(self, valor):
-        return self.__saldo < valor
+    def __saque_permitido(self, valor):
+        valor_disponivel = self.__saldo + self.__limite
+        return valor <= valor_disponivel
 
     def sacar(self, valor):
-        if self.eh_saldo_negativo(valor):
+        if self.__saque_permitido(valor):
+            self.__saldo -= valor
+        else: 
             raise Exception('Saldo indisponível')
-        self.__saldo -= valor
 
     def transferir(self, valor, conta_destino):
         self.sacar(valor)
