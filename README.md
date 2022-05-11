@@ -1,2 +1,2 @@
 # alura-python-oo
-Learning OO on Python through the Alura course platform using TDD.
+Learning OO in Python through the Alura course platform using TDD.
