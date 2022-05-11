@@ -2,7 +2,7 @@ import sys
 import os
 import pytest
 
-source_path = os.path.dirname(os.path.abspath("conta.py")) + '\src'
+source_path = os.path.dirname(os.path.abspath("conta.py")) + '\\src\\banco'
 sys.path.insert(1, source_path)
 from conta import Conta 
 

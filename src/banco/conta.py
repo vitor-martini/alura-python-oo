@@ -39,4 +39,5 @@ class Conta():
         conta_destino.depositar(valor)
 
     def extrato(self):
-        print('O saldo da conta "{}" do titular "{}" é de: R${}'.format(self.__numero, self.__titular, self.__saldo))
+        print(f'O saldo da conta "{self.__numero}" do titular "{self.__titular}" é de: R${self.__saldo}')
+
