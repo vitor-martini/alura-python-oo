@@ -1,2 +1,2 @@
-# alura-python-orientacao-a-objeto
-Aprendizado de orientação a objeto com Python pela plataforma Alura utilizando TDD.
+# alura-python-oo
+Learning OO on Python through the Alura course platform using TDD.
